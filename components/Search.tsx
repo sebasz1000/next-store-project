@@ -10,13 +10,16 @@ function Search(){
   
     
     const handleSearch = useCallback((searchText: string) => {
-        const params = new URLSearchParams(searchParams.toString()) //changeable
+        const params = new URLSearchParams(searchParams) //changeable
         if(searchText){
             params.set("search", searchText)
         }else{
            params.delete("search")
         }
-        router.push(`${pathname}/?${params.toString()}`)
+
+        const queryString = params.toString()
+        const query = queryString ? `?${queryString}` : ""
+        router.push(`${pathname}${query}`)
     }, [searchParams])
 
     return(
@@ -26,7 +29,7 @@ function Search(){
         className="bg-white text-black"
                 defaultValue={searchParams.get("search")?.toString()}
                 placeholder="Annibale Colombo Sofa..." 
-                onChange={(e) => handleSearch(e.currentTarget.value)}/>
+                onChange={(e) => handleSearch(e.currentTarget.value)} />
         </div>
     )
     
