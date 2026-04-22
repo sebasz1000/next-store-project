@@ -23,7 +23,7 @@ function Search(){
     }, [searchParams])
 
     return(
-        <div className="flex">
+        <div className="flex mb-10">
         <label htmlFor="searchText" className="mr-3">SEARCH</label>
         <input type="text"
         className="bg-white text-black"
