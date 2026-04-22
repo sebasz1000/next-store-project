@@ -6,7 +6,7 @@ interface ProductPageProps{
 export default async function ProductPage({ params }:ProductPageProps){
 
     const {id} = await params
-    const response = await fetch(`https://dummyjson.com/products/1`)
+    const response = await fetch(`https://dummyjson.com/productss/1`)
     const {title, description, thumbnail, category}: Product = await response.json()
     console.log(id)
     return (<>
