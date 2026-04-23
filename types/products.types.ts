@@ -4,6 +4,7 @@ interface Product{
   thumbnail: string;
   category: string;
   description: string;
+  price: number;
 }
 interface APIResponse{
   products: Product[];
