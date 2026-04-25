@@ -13,7 +13,14 @@ interface APIResponse{
   limit: number;
 }
 
+
+interface ActionStateType{
+    message: string;
+    error: boolean
+}
+
 export type {
     Product,
-    APIResponse
+    APIResponse,
+    ActionStateType
 }

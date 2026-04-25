@@ -1,3 +1,4 @@
+import { CommentBox } from "@/components";
 import { Product } from "@/types/products.types";
 
 interface ProductPageProps{
@@ -14,5 +15,7 @@ export default async function ProductPage({ params }:ProductPageProps){
         <h1 className="text-5xl mb-2">{title}</h1>
         <span className="text-lg">{uppercasedCategory}</span>
         <p className="mt-4">{description}</p>
+        <h3 className="text-xl mt-15 mb-3 ml-6">Write a comment!</h3>
+        <CommentBox />
     </div>)
 }
