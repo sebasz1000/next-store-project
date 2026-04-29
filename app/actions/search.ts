@@ -16,4 +16,12 @@ const  searchProducts = async (searchTextValue : string
         const {products} = data 
         return products
     } 
-export {searchProducts}
+
+const getAllProducts = async ({ limit = 5 }: { limit?: number}): Promise<Product[]> => {
+    const response = await fetch(`https://dummyjson.com/products/?limit=${limit}`)
+    const data: APIResponse = await response.json()
+    const { products } = data
+    return products
+}
+export {searchProducts, getAllProducts}
+

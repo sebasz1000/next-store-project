@@ -32,10 +32,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Header />
-        <main className="px-10 py-5">
+        <main className="container mx-auto min-h-screen px-4 py-2">
         {children}
         </main>
-        </body>
+        <footer className="bg-mauve-200 w-full px-4 py-2 text-slate-700">
+          <p className="text-xs">All rights reserved to this company</p>
+        </footer>
+      </body>
     </html>
   );
 }

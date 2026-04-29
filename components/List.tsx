@@ -19,7 +19,7 @@ function List(){
     if(!(searchQuery.length > 0)) return null;
 
     return(
-      <ul className="mt-6 absolute top-5 left-0 w-80 bg-slate-200 -translate-x-1/7 px-3 py-2 max-h-[550px] overflow-y-auto b-local">
+      <ul className="mt-6 absolute top-5 left-0 w-80 bg-slate-200 -translate-x-1/7 px-3 py-2 max-h-[550px] overflow-y-auto b-local z-10 shadow-xl border-1 border-slate-500">
         {
             products.map( ({title, id, thumbnail, category}, key) => { 
                 const catLabel = category.charAt(0).toUpperCase() + category.slice(1)
@@ -27,7 +27,7 @@ function List(){
                 const borderString = !isLastElement ? "border-b-1  border-b-slate-500" : ""
                 return (
                 <li key={id} 
-                    className={`flex align-center ${borderString} mb-1 pb-1`}>
+                    className={`flex align-center ${borderString} mb-1 pb-1 hover:bg-slate-300`}>
                     <img src={thumbnail} alt={title} className="w-18 mr-2" />
                     <div className="flex flex-col justify-center">
                         <Link href={`/product/${id}`} >

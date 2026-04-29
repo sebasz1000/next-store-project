@@ -11,11 +11,11 @@ export default async function ProductPage({ params }:ProductPageProps){
     const {title, description, thumbnail, category}: Product = await response.json()
     const uppercasedCategory = category.charAt(0).toUpperCase() + category.slice(1)
     return (<div className="flex flex-col justify-center items-start w-full">
-    <img src={thumbnail} alt={title} className="w-90" />
-        <h1 className="text-5xl mb-2">{title}</h1>
-        <span className="text-lg">{uppercasedCategory}</span>
+        <h1 className="text-3xl mb-0 mt-3">{title}</h1>
+        <span className="text-sm text-slate-500">{uppercasedCategory}</span>
+        <img src={thumbnail} alt={title} className="w-full" />
         <p className="mt-4">{description}</p>
-        <h3 className="text-xl mt-15 mb-3 ml-6">Write a comment!</h3>
+        
         <CommentBox />
     </div>)
 }

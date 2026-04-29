@@ -15,12 +15,9 @@ export default async function RootLayout({
   
     return (
         <section>
-        <Link href="/" className="text-sm">← Back to store</Link>
-        <h1 className="mt-4">Product Detail Page</h1>
-        <div className="grid grid-cols-[65%_1fr] gap-8 w-full border-1 border-white">
-            <div className="">
+        <Link href="/" className="text-xs text-violet-800">← Back to store</Link>
+        <div className="grid md:grid-cols-[65%_1fr] gap-8 w-full ">
                 {children}
-            </div>
             <div className=" border-1 border-white">
                  <Suspense fallback={<p>Loading Related...</p>}>
                     <RelatedProducts category={category}/>
